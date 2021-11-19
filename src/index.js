@@ -7,5 +7,33 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import axios from 'axios';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//reducer
+//creating a global variable "", that is given a state and action
+//every time an action takes place, it will run the reducer
+
+const feelingsReducer = (state = [], action)=> {
+    if (action.type === 'GET_FEELINGS_LIST'){
+        return action.payload;
+    }
+    return state;
+}; //end reducer
+
+const storeInstance = createStore(
+    combineReducers(
+        {
+        feelingsReducer
+
+    }
+    ),
+    applyMiddleware(
+      
+    )
+);
+
+ReactDOM.render(
+<Provider store={storeInstance}>
+    <App />
+</Provider>,
+ document.getElementById('root'));
+
 registerServiceWorker();
