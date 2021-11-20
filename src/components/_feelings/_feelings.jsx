@@ -15,13 +15,15 @@ function _feelings() {
     //set selector to start at 0
     const [score, setScore] = useState('');
 
+//make sure that value is entered in the dropdown box or next button will not work
 
+//next button should link to understanding page.
 
 
     const dispatch = useDispatch ();
 
     return (
-        <div>
+        <div class="feeling">
             <h1>How are you feeling today?</h1>
             <InputLabel>Feeling? </InputLabel>
       <Select
@@ -35,6 +37,7 @@ function _feelings() {
         <MenuItem value="4">4</MenuItem>
         <MenuItem value="5">5</MenuItem>
       </Select>
+      <Button variant ="outlined" size="medium" color="primary">Next</Button>
         </div>
     )
 }

@@ -21,3 +21,16 @@
 h4 {
   font-style: italic;
 }
+
+.image {
+  max-width: 200px;
+}
+
+.feeling {
+  text-align: center;
+}
+
+.nextButton {
+  margin-left: 65em;
+  margin-bottom: 65em;
+}
