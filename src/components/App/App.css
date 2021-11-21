@@ -17,6 +17,12 @@
 .App-intro {
   font-size: large;
 }
+.comments{
+  text-align: center;
+}
+.feeling {
+  text-align: center;
+}
 
 h4 {
   font-style: italic;
@@ -26,11 +32,16 @@ h4 {
   max-width: 200px;
 }
 
-.feeling {
-  text-align: center;
-}
-
 .nextButton {
   margin-left: 65em;
   margin-bottom: 65em;
 }
+
+.support{
+  text-align: center;
+}
+.understanding {
+  text-align: center;
+}
+
+
