@@ -5,11 +5,12 @@ import { InputLabel, MenuItem, Select, Button } from '@material-ui/core';
 
 function support() {
     //const reducerName = useSelector (store => store.reducerName);
-    const feelingsReducer = useSelector (store => store.feelingsReducer);
+    const feedback = useSelector (store => store.feedback);
+    console.log ('IN Feedback-------->',feedback);
 
     const dispatch = useDispatch ();
 
-    const [support, setSupport] = useState('');
+    const [support, setSupport] = useState(0);
    
     
     const getSupport = (event)=>{
@@ -18,12 +19,12 @@ function support() {
       }
 
     return (
-        <div class="support">
+        <div className="support">
             <h1>How well are you being supported?</h1>
             <InputLabel>Support?</InputLabel>
             <Select
             value= {support}
-            onChange={getSupport}
+            onChange={(event)=>getSupport(event)}
             >
                 <MenuItem value="1">1</MenuItem>
                 <MenuItem value="2">2</MenuItem>
@@ -38,7 +39,7 @@ function support() {
             color="primary" 
             component = {Link}
             to="/comments"
-            onClick = {()=>dispatch({type: "ADD_SUPPORT", payload: support})}>Next</Button>
+            onClick = {()=>dispatch({type: 'ADD_SUPPORT', payload: support})}>Next</Button>
 </div>
     )
 }

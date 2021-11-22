@@ -11,11 +11,28 @@ import Understanding from '../understanding/understanding';
 import Support from '../support/support';
 import Comments from '../comments/comments';
 import Review from '../review/review';
+import Admin from '../admin/admin';
+
 
 function App() {
 
-  const dispatch = useDispatch(); //this code calls the redux listener
+    useEffect(() => {
+      console.log('in useEffect');
+      getFeedback();
+    }, []);
 
+  const dispatch = useDispatch(); //this code calls the redux listener
+  const getFeedback = () => {
+    axios.get('/api/feedback').then((res) => {
+      console.log('Successful AXIOS GET', res);
+      dispatch({
+        type: 'GET_FEELINGS',
+        payload: res.data,
+      });
+    }).catch((err) => {
+      console.log('Error in AXIOS GET');
+    });
+  };
 
   return (
     <Container>
@@ -37,6 +54,7 @@ function App() {
           <Route path="/support" element={<Support/>} ></Route>
           <Route path="/comments" element={<Comments/>} ></Route>
           <Route path="/review" element={<Review/>} ></Route>
+          <Route path="/admin" element={<Admin/>} ></Route>
         </Routes>
       </BrowserRouter>
     

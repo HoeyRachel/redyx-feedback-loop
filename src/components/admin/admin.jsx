@@ -9,8 +9,13 @@ function admin() {
     const dispatch = useDispatch ();
 
     return (
-        <div>
-            <h1>admin</h1>
+        <div className="admin">
+            <h1>Review Your Feedback</h1>
+            {/* <h2>Feelings: {feedback.feeling}  </h2>
+            <h2>Understanding: {feedback.understanding} </h2>
+            <h2>Support: {feedback.supprt} </h2>
+            <h2>Comments: {feedback.comments}</h2> */}
+
         </div>
     )
 }

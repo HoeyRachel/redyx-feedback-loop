@@ -4,17 +4,18 @@ import {Link} from 'react-router-dom';
 import { TextField, Button, Select, MenuItem, InputLabel } from '@material-ui/core';
 
 function feelings() {
-    const feelingsReducer = useSelector (store => store.feelingsReducer);
+  const feedback = useSelector (store => store.feedback);
+  console.log ('IN Feedback-------->',feedback);
 
     // const feelings = useSelector (store => store.feelings);
 
     //set selector to start at 0
    
-    const [feelings, setFeelings] = useState('');
+    const [feelings, setFeelings] = useState(0);
    
     
     const getFeelings = (event)=>{
-        console.log ('in getScore:', event.target.value);
+        console.log ('in getFeelings:', event.target.value);
         setFeelings(event.target.value);
       }
 
@@ -23,7 +24,7 @@ function feelings() {
 //next button should link to understanding page.
 const dispatch = useDispatch();
     return (
-        <div class="feeling">
+        <div className="feeling">
             <h1>How are you feeling today?</h1>
             <InputLabel>Feeling? </InputLabel>
       <Select

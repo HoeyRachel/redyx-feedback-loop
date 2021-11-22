@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import { TextField, Button, Select, MenuItem, InputLabel } from '@material-ui/core';
 function comments() {
     //const reducerName = useSelector (store => store.reducerName);
-    const feelingsReducer = useSelector (store => store.feelingsReducer);
+    const feedback = useSelector (store => store.feedback);
+    console.log ('IN Feedback-------->',feedback);
     const dispatch = useDispatch ();
     const [comments, setComments] = useState('');
    
@@ -16,7 +17,7 @@ function comments() {
       }
 
     return (
-     <div class="comments">
+     <div className="comments">
             <h1>Any comments you want to leave?</h1>
             <TextField
             label="Write your comments here"
