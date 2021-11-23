@@ -8,19 +8,31 @@ function feelings() {
   const feedback = useSelector (store => store.feedback); //looking at index.js for the value of feedback
   console.log ('IN Feedback-------->',feedback);
   const [feelings, setFeelings] = useState('');
+
+  
+
+const [enableButton, setEnableButton ]= useState(true);//enabling the next button
+
+
+    //functions
+    
    
     
     const getFeelings = (event)=>{
         console.log ('in getFeelings:', event.target.value);
         setFeelings(event.target.value);
+        //make sure that value is entered in the dropdown box or next button will not work
+        if(event.target.value != ''){
+          setEnableButton(false)
       }
+    }
 
-//make sure that value is entered in the dropdown box or next button will not work
 
 const dispatch = useDispatch();
     return (
         <div className="feeling">
             <h1>How are you feeling today?</h1>
+            <h3>Select a value below</h3>
             <InputLabel>Feeling? </InputLabel>
       <Select
       value={feelings}
@@ -35,8 +47,9 @@ const dispatch = useDispatch();
       </Select>
       
       <Button 
+      disabled = {enableButton} 
       variant ="outlined" 
-      size="medium" 
+      size="medium"   
       color="primary" 
       component = {Link}
       to="/understanding"

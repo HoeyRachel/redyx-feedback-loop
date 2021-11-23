@@ -12,12 +12,17 @@ function understanding() {
     //set selector to start at 0
    
     const [understanding, setUnderstanding] = useState('');
+    const [enableButton, setEnableButton ]= useState(true);//enabling the next button
    
     
     const getUnderstanding = (event)=>{
         console.log ('in getUnderstanding:', event.target.value);
         setUnderstanding(event.target.value);
+         //make sure that value is entered in the dropdown box or next button will not work
+         if(event.target.value != ''){
+            setEnableButton(false)
       }
+    }
       const dispatch = useDispatch();
 //make sure that value is entered in the dropdown box or next button will not work
 
@@ -27,6 +32,7 @@ function understanding() {
 
         <div className="understanding">
             <h1>How well are understanding the content?</h1>
+            <h3>Select a value below</h3>
             <InputLabel>Understanding</InputLabel>
                 <Button
                 variant ="outlined" 
@@ -40,6 +46,7 @@ function understanding() {
             value= {understanding}
             onChange={(event)=>getUnderstanding(event)}
             >
+                
                 <MenuItem value="1">1</MenuItem>
                 <MenuItem value="2">2</MenuItem>
                 <MenuItem value="3">3</MenuItem>
@@ -48,6 +55,7 @@ function understanding() {
             </Select>
 
             <Button
+            disabled = {enableButton} 
             variant ="outlined" 
             size="medium" 
             color="primary" 

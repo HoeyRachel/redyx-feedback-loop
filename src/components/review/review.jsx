@@ -13,8 +13,6 @@ function review(props) {
     const feedback = useSelector (store => store.feedback);
     
     
-  
-    
     const handlePost = () =>{
         console.log( 'in handlePost' );
         axios.post( `/feedback`, feedback ).then( (response)=>{
@@ -39,6 +37,8 @@ function review(props) {
             size="large" 
             color="secondary" 
             style={{fontSize: 18}} 
+            component = {Link}
+            to="/success"
             onClick={handlePost}> Submit Feedback
             </Button>
             

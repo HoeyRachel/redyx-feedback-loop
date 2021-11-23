@@ -2,6 +2,17 @@ const express = require ( 'express');
 const router = express.Router();
 const pool = require( '../modules/pool');
 
+router.get('/', (req, res) => {
+    console.log('in GET');
+    let queryString = `SELECT * FROM feedback ORDER BY id DESC`;
+    pool.query(queryString).then((results) => {
+        res.send(results.rows);
+    }).catch((err) => {
+        alert('GET ERROR');
+        res.sendStatus(err);
+    })
+})
+
 
 router.post('/', (req, res) => {
     console.log('in feedback post route with:', req.body);

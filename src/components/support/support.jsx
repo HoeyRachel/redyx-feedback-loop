@@ -11,16 +11,22 @@ function support() {
     const dispatch = useDispatch ();
 
     const [support, setSupport] = useState('');
+    const [enableButton, setEnableButton ]= useState(true);//enabling the next button
    
     
     const getSupport = (event)=>{
         console.log ('in getSupport:', event.target.value);
         setSupport(event.target.value);
+        //make sure that value is entered in the dropdown box or next button will not work
+        if(event.target.value != ''){
+            setEnableButton(false)
       }
+    }
 
     return (
         <div className="support">
             <h1>How well are you being supported?</h1>
+            <h3>Select a value below</h3>
             <InputLabel>Support?</InputLabel>
             <Button
                 variant ="outlined" 
@@ -42,6 +48,7 @@ function support() {
             </Select>
 
             <Button
+            disabled = {enableButton} 
             variant ="outlined" 
             size="medium" 
             color="primary" 

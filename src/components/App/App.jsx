@@ -12,6 +12,7 @@ import Support from '../support/support';
 import Comments from '../comments/comments';
 import Review from '../review/review';
 import Admin from '../admin/admin';
+import Success from '../success/success';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/comments" element={<Comments/>} ></Route>
           <Route path="/review" element={<Review/>} ></Route>
           <Route path="/admin" element={<Admin/>} ></Route>
+          <Route path="/success" element={<Success/>} ></Route>
         </Routes>
       </BrowserRouter>
     
