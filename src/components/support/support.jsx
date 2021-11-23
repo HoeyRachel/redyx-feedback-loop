@@ -10,7 +10,7 @@ function support() {
 
     const dispatch = useDispatch ();
 
-    const [support, setSupport] = useState(0);
+    const [support, setSupport] = useState('');
    
     
     const getSupport = (event)=>{
@@ -22,6 +22,14 @@ function support() {
         <div className="support">
             <h1>How well are you being supported?</h1>
             <InputLabel>Support?</InputLabel>
+            <Button
+                variant ="outlined" 
+                size="medium" 
+                color="primary" 
+                component = {Link}
+                to="/understanding"
+                onClick = {()=>dispatch({type: 'ADD_SUPPORT', payload: support})}>Back
+            </Button>
             <Select
             value= {support}
             onChange={(event)=>getSupport(event)}

@@ -16,23 +16,9 @@ import Admin from '../admin/admin';
 
 function App() {
 
-    useEffect(() => {
-      console.log('in useEffect');
-      getFeedback();
-    }, []);
 
-  const dispatch = useDispatch(); //this code calls the redux listener
-  const getFeedback = () => {
-    axios.get('/api/feedback').then((res) => {
-      console.log('Successful AXIOS GET', res);
-      dispatch({
-        type: 'GET_FEELINGS',
-        payload: res.data,
-      });
-    }).catch((err) => {
-      console.log('Error in AXIOS GET');
-    });
-  };
+  
+  
 
   return (
     <Container>

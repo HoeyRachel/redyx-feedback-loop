@@ -4,14 +4,10 @@ import {Link} from 'react-router-dom';
 import { TextField, Button, Select, MenuItem, InputLabel } from '@material-ui/core';
 
 function feelings() {
-  const feedback = useSelector (store => store.feedback);
+  ///the next three lines of code are the same on every component. This is a one way road to the store. 
+  const feedback = useSelector (store => store.feedback); //looking at index.js for the value of feedback
   console.log ('IN Feedback-------->',feedback);
-
-    // const feelings = useSelector (store => store.feelings);
-
-    //set selector to start at 0
-   
-    const [feelings, setFeelings] = useState(0);
+  const [feelings, setFeelings] = useState('');
    
     
     const getFeelings = (event)=>{
@@ -21,7 +17,6 @@ function feelings() {
 
 //make sure that value is entered in the dropdown box or next button will not work
 
-//next button should link to understanding page.
 const dispatch = useDispatch();
     return (
         <div className="feeling">
@@ -46,6 +41,7 @@ const dispatch = useDispatch();
       component = {Link}
       to="/understanding"
       onClick = {()=>dispatch({type: "ADD_FEELING", payload: feelings})}>NEXT
+      {/* //everything inside the ( ) is an action that the dispatch call takes to the store */}
       </Button>
       </div>
     )

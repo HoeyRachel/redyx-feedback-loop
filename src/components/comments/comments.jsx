@@ -19,6 +19,14 @@ function comments() {
     return (
      <div className="comments">
             <h1>Any comments you want to leave?</h1>
+            <Button
+                variant ="outlined" 
+                size="medium" 
+                color="primary" 
+                component = {Link}
+                to="/support"
+                onClick = {()=>dispatch({type: "ADD_COMMENTS", payload: comments})}>Back
+            </Button>
             <TextField
             label="Write your comments here"
             defaultValue=""

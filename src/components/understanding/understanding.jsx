@@ -11,7 +11,7 @@ function understanding() {
 
     //set selector to start at 0
    
-    const [understanding, setUnderstanding] = useState(0);
+    const [understanding, setUnderstanding] = useState('');
    
     
     const getUnderstanding = (event)=>{
@@ -28,6 +28,14 @@ function understanding() {
         <div className="understanding">
             <h1>How well are understanding the content?</h1>
             <InputLabel>Understanding</InputLabel>
+                <Button
+                variant ="outlined" 
+                size="medium" 
+                color="primary" 
+                component = {Link}
+                to="/"
+                onClick = {()=>dispatch({type: 'ADD_UNDERSTANDING', payload: understanding})}>Back
+            </Button>
             <Select
             value= {understanding}
             onChange={(event)=>getUnderstanding(event)}
