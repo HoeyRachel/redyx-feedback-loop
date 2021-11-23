@@ -31,7 +31,7 @@ function understanding() {
     return (
 
         <div className="understanding">
-            <h1>How well are understanding the content?</h1>
+            <h1>How well are you understanding the content?</h1>
             <h3>Select a value below</h3>
             <InputLabel>Understanding</InputLabel>
                 <Button

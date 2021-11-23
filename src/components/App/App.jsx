@@ -11,7 +11,6 @@ import Understanding from '../understanding/understanding';
 import Support from '../support/support';
 import Comments from '../comments/comments';
 import Review from '../review/review';
-import Admin from '../admin/admin';
 import Success from '../success/success';
 
 
@@ -22,16 +21,19 @@ function App() {
   
 
   return (
+    <div>
     <Container>
       <Grid container>
         <Grid item xs ={1}></Grid>
-        <Box p={5}>
+        <div className="imageDiv">
+        <Box p={3}>
           <img className="image" src="https://cdn.pixabay.com/photo/2017/12/27/12/41/sketch-3042584_960_720.jpg"/>
         </Box>
+        </div>
         </Grid>
         <Grid item xs = {8}>
                <Typography variant="h3"align="center" color="secondary">Feedback!</Typography>
-         <br></br>
+                <br></br>
                <Typography variant="h5"align="center" color="primary">Don't Forget it!</Typography>
         <Grid/>
       <BrowserRouter>
@@ -41,13 +43,13 @@ function App() {
           <Route path="/support" element={<Support/>} ></Route>
           <Route path="/comments" element={<Comments/>} ></Route>
           <Route path="/review" element={<Review/>} ></Route>
-          <Route path="/admin" element={<Admin/>} ></Route>
           <Route path="/success" element={<Success/>} ></Route>
         </Routes>
       </BrowserRouter>
     
     </Grid>
     </Container>
+  </div>
   );
       
 

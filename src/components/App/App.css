@@ -24,6 +24,10 @@
   text-align: center;
 }
 
+h1 {
+  color: #f50057;
+
+}
 h4 {
   font-style: italic;
 }
@@ -31,9 +35,12 @@ h4 {
 .image {
   max-width: 200px;
 }
+.imageDiv{
+  margin-right: 70em;
+}
 
 .nextButton {
-  margin-left: 65em;
+  margin-left: 90em;
   margin-bottom: 65em;
 }
 .review{

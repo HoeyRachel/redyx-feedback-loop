@@ -20,7 +20,7 @@ function comments() {
      <div className="comments">
             <h1>Any comments you want to leave?</h1>
             <h3>Enter comments below</h3>
-            <Button
+            <Button className="nextButton"
                 variant ="outlined" 
                 size="medium" 
                 color="primary" 
